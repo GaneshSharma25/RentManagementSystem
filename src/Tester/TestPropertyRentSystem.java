@@ -19,8 +19,8 @@ public class TestPropertyRentSystem {
 		try (Scanner sc = new Scanner(System.in)) {
 			Set<Owner> owner = new HashSet<Owner>();
 			System.out.println("Enter File location..");
-			String fileName = "C:/Users/dac/Desktop/OwnerDeatils.txt";
-			//String fileName = sc.nextLine();
+			//String fileName = "C:/Users/dac/Desktop/OwnerDeatils.txt";
+			String fileName = sc.nextLine();
 			File f1 = new File(fileName);
 
 			if (f1.isFile() && f1.canRead() && f1.length() != 0) {
