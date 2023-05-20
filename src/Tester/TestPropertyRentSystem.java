@@ -37,7 +37,7 @@ public class TestPropertyRentSystem {
 				try {
 					System.out.println("Enter choice..\n" + "1.Add Owner\n" + "2.Display all owner\n"
 							+ "3.Delete Owner by Aaadhaar.\n" + "4.Sort Owner by Property Type..\n"
-							+ "5.Book Property..\n" + "0.Exit..");
+							+ "5.Book Property..\n" +"6.upadte mobile no.\n"+ "0.Exit..");
 
 					switch (sc.nextInt()) {
 					case 1:// "1.Add Owner\n"
@@ -72,6 +72,8 @@ public class TestPropertyRentSystem {
 						if(check) {
 							System.out.println("No record found...");
 						}
+						
+		
 					
 					
 						break;
@@ -104,6 +106,28 @@ public class TestPropertyRentSystem {
 						if(check) {
 							System.out.println("No records found..");
 						}
+						break;
+						
+					case 6:
+						//6.upadte mobile no.\n
+						System.out.println("Enter Aadhaar no.. and MobileNo to set..");
+						aadhaar = sc.next();
+						String mobNo = sc.next();
+						check = true;
+						Iterator<Owner> itr2 = owner.iterator();
+						while(itr2.hasNext()) {
+							Owner currrentOwner = itr2.next();
+							if(currrentOwner.getAadhaarNo().equals(aadhaar)) {
+								currrentOwner.setMobno(mobNo);
+								System.out.println("Mobile no updated Successfully..");
+								System.out.println(currrentOwner);
+								check = false;
+								break;
+							}
+						}
+						if(check) {
+							System.out.println("No records found..");
+						}	
 						break;
 					case 0:
 						System.out.println("Exit..");
